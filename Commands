@@ -1,0 +1,26 @@
+برای آپگرید به ورژن آخر پایتون در سرور مجازی اوبونتو، می‌توانید از ابزار pyenv استفاده کنید که به شما این امکان را می‌دهد تا نسخه‌های مختلف پایتون را مدیریت کنید. ابتدا باید pyenv را نصب کنید و سپس اقدام به نصب ورژن جدید پایتون کنید. مراحل زیر را دنبال کنید:
+
+نصب pyenv:
+curl https://pyenv.run | bash
+
+اضافه کردن دستورات pyenv به فایل bashrc یا profile:
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+source ~/.bashrc
+
+
+نصب وابستگی‌های مورد نیاز برای کامپایل پایتون:
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+
+نصب ورژن جدید پایتون با استفاده از pyenv:
+pyenv install 3.10.2
+
+تنظیم ورژن جدید پایتون به عنوان ورژن پیش‌فرض:
+pyenv global 3.10.2
+
+حالا می‌توانید از ورژن جدید پایتون استفاده کنید. برای اطمینان از اینکه ورژن پایتون به درستی تغییر کرده است، می‌توانید دستور  را اجرا کنید و ورژن جدید را بررسی کنید.
+python --version
+  
